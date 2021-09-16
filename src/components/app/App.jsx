@@ -7,15 +7,15 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route 
+        <Route
           path="/"
           exact
-          render={routerProps => <ListPage {...routerProps}/>}
+          render={(routerProps) => <ListPage {...routerProps} />}
         />
-        <Route 
+        <Route
           path="/:villager"
           exact
-          render={routerProps => <DetailPage {...routerProps}/>}
+          render={(routerProps) => <DetailPage {...routerProps} />}
         />
       </Switch>
     </Router>
