@@ -11,3 +11,10 @@ export const getVillagers = async () => {
     birthday: villager.birthday,
   }));
 };
+
+export const getVillagersId = async (id) => {
+  const response = await fetch(`https://ac-vill.herokuapp.com/villagers/${id}`);
+  const villager = await response.json();
+
+  return villager;
+};

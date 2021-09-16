@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Villager from './Villager';
+import { Link } from 'react-router-dom';
 
 const VillagerList = ({ villagers }) => (
   <ul aria-label="villagers">
     {villagers.map((villager) => (
       <li key={villager.id}>
-        <Villager
-          name={villager.name}
-          image={villager.image}
-          gender={villager.gender}
-          quote={villager.quote}
-          birthday={villager.birthday}
-        />
+        <Link to={`/${villager.id}`}>
+          <Villager
+            name={villager.name}
+            image={villager.image}
+          />
+        </Link>
       </li>
     ))}
   </ul>
@@ -24,9 +24,6 @@ VillagerList.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      gender: PropTypes.string.isRequired,
-      quote: PropTypes.string.isRequired,
-      birthday: PropTypes.string.isRequired,
     })
   ).isRequired
 };
